@@ -1,11 +1,11 @@
 import streamlit as st
 import pandas as pd
 import joblib
-from tensorflow.keras.models import load_model
+from tensorflow import keras
 
 # Load saved pipeline and model
 pipeline = joblib.load("artifacts/pipeline.pkl")
-model = load_model("artifacts/model.h5")
+model = keras.models.load_model("artifacts/model.h5", compile=False)
 
 st.title("📊 Customer Churn Prediction")
 
