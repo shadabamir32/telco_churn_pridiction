@@ -37,13 +37,14 @@ user_data = pd.DataFrame([{
     "EstimatedSalary": estimated_salary
 }])
 
-# if st.button("Predict Churn"):
-#     # Apply preprocessing
-#     X_processed = pipeline.transform(user_data)
+if st.button("Predict Churn"):
+    # Apply preprocessing
+    X_processed = pipeline.transform(user_data)
+    print(X_processed);
 
-#     # Predict probability
-#     prob = model.predict(X_processed)[0][0]
-#     result = "Churn ❌" if prob >= 0.5 else "No Churn ✅"
+    # Predict probability
+    prob = model.predict(X_processed)[0][0]
+    result = "Churn ❌" if prob >= 0.5 else "No Churn ✅"
 
-#     st.write(f"**Churn Probability:** {prob:.2%}")
-#     st.write(f"**Prediction:** {result}")
+    st.write(f"**Churn Probability:** {prob:.2%}")
+    st.write(f"**Prediction:** {result}")
